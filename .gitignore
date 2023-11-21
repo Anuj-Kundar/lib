@@ -1,3 +1,6 @@
 # Dependency directories
 node_modules/
 jspm_packages/
+
+# Configuration file
+backend/config.js
