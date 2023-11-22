@@ -3,15 +3,15 @@ import mongoose from "mongoose";
 const bookSchema = mongoose.Schema(
     {
         title:{
-            type:string,
+            type:String,
             required:true,
         },
         author:{
-            type:string,
+            type:String,
             required:true,
         },
         publishYear:{
-            type:number,
+            type:Number,
             required:true,
         },
     },
