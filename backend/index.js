@@ -37,7 +37,7 @@ app.post('/books', async (request, response) => {
     }
 });
 
-// Route to gt book from database
+// Route to get all book from database
 app.get('/books',async(requst,response)=>{
     try{
         const books=await Book.find({});
@@ -45,6 +45,20 @@ app.get('/books',async(requst,response)=>{
             count:books.length,
             data:books,
         })
+    }
+    catch(error){
+        console.log(error.message);
+        response.status(500).send({message:error.message});
+    }
+})
+
+// Route to get 1 book from database by id
+app.get('/books/:id',async(requst,response)=>{
+    try{
+        const {id}=requst.params;
+        const book=await Book.findById(id);
+        
+        return response.status(200).json(book);
     }
     catch(error){
         console.log(error.message);
