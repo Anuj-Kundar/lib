@@ -56,7 +56,7 @@ app.get('/books',async(requst,response)=>{
 app.get('/books/:id',async(requst,response)=>{
     try{
         const {id}=requst.params;
-        const book=await Book.findById(id);
+        const book=await Book.findById(id   );
         
         return response.status(200).json(book);
     }
@@ -66,7 +66,31 @@ app.get('/books/:id',async(requst,response)=>{
     }
 })
 
+// Route for updating Book
+app.put('/books/:id',async(requst,response)=>{
+    try{
+        if(!requst.body.title || !requst.body.author || !requst.body.publishYear){
+            return response.status(400).send({
+                message:'Please fill all required fields',
+            });
+        }
+        const {id}=requst.params;
+        const result = await Book.findByIdAndUpdate(id,requst.body);
 
+        if(!result){
+            return response.status(404).send({
+                message:'No Book Found',
+            });
+        }
+        return response.status(200).send({
+            message:'Book Updated Successfully',
+        });
+    }
+    catch(error){
+        console.log(error.message);
+        response.status(500).send({message:error.message});
+    }
+});
 mongoose
     .connect(mongoDBURL)
     .then(() => {
