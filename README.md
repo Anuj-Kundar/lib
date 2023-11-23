@@ -1,4 +1,4 @@
-# Project Title
+# 
 
 BookShelfCentral is a web application that allows users to search for books and add them to their bookshelf. The application is built using MERN. The application allows to search for books and display the results. The user can then add the book to their bookshelf. The bookshelf is stored in MongoDB database. The user can then view their bookshelf and remove books from it. 
 
