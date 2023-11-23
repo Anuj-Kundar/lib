@@ -52,10 +52,10 @@ Done! Now open localhost:3000 in your browser.
 
 ## Built With
 
-* [MongoDB](https://www.mongodb.com/) - Used to generate RSS Feeds
-* [Express](https://expressjs.com/) - Used to generate RSS Feeds
-* [React](https://reactjs.org/) - Used to generate RSS Feeds
-* [Node](https://nodejs.org/en/) - Used to generate RSS Feeds
+* [MongoDB](https://www.mongodb.com/) - Used to store bookshelf
+* [Express](https://expressjs.com/) - Used for routing
+* [React](https://reactjs.org/) - Used for frontend development
+* [Node](https://nodejs.org/en/) - Used for backend development
 
 
 
